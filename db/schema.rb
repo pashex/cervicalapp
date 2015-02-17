@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150217043463) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -53,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150217043463) do
   end
 
   add_index "rhinoart_galleries", ["name"], name: "index_rhinoart_galleries_on_name", unique: true, using: :btree
+  add_index "rhinoart_galleries", ["page_id"], name: "rhinoart_galleries_page_id_fk", using: :btree
   add_index "rhinoart_galleries", ["url"], name: "index_rhinoart_galleries_on_url", unique: true, using: :btree
 
   create_table "rhinoart_gallery_images", force: true do |t|
@@ -78,6 +76,10 @@ ActiveRecord::Schema.define(version: 20150217043463) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "rhinoart_page_comments", ["page_id"], name: "rhinoart_page_comments_page_id_fk", using: :btree
+  add_index "rhinoart_page_comments", ["parent_id"], name: "rhinoart_page_comments_parent_id_fk", using: :btree
+  add_index "rhinoart_page_comments", ["user_id"], name: "rhinoart_page_comments_user_id_fk", using: :btree
 
   create_table "rhinoart_page_contents", force: true do |t|
     t.integer "page_id"
@@ -116,6 +118,7 @@ ActiveRecord::Schema.define(version: 20150217043463) do
   end
 
   add_index "rhinoart_pages", ["parent_id", "slug"], name: "index_rhinoart_pages_on_parent_id_and_slug", unique: true, using: :btree
+  add_index "rhinoart_pages", ["user_id"], name: "rhinoart_pages_user_id_fk", using: :btree
 
   create_table "rhinoart_settings", force: true do |t|
     t.string "name",  limit: 120, default: "", null: false
