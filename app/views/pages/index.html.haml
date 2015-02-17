@@ -1,13 +1,16 @@
-- if @page
-  .header{id: @page.name}
-    .logo-panel
-      .holder
-        = @page.content.html_safe
+#wrapper
+  = render "header"
+  - if @page
+    .header{id: @page.name}
+      .logo-panel
+        .holder
+          = @page.content.html_safe
 
-%section#main
-  - for article in @articles
-    .container-block{class: article.content('background'), id: article.name}
-      %article.container-fluid
-        .content-block.row
-          .col-md-12
-            = article.content.html_safe
+  %section#main
+    - for article in @articles
+      .container-block{class: article.content('background'), id: article.name}
+        %article.container-fluid
+          .content-block.row
+            .col-md-12
+              = article.content.html_safe
+  = render "footer"
