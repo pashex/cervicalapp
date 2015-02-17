@@ -40,3 +40,7 @@ gem 'rhinoart', github: 'kostyakch/rhinoart_cms'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "rails_12factor", group: :production
+gem 'puma'
+
+ruby "2.1.2"
