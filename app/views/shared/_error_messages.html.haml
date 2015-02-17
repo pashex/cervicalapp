@@ -1,0 +1,5 @@
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    %div.alert{ class: "alert-#{ name == :success ? "success" : "danger" }" }
+      = link_to "&#215".html_safe, "#", class: "close", data: { dismiss: "alert" }
+      %div{ id: "flash_#{name}" }= msg
