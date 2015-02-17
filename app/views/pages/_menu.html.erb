@@ -1,0 +1,5 @@
+<li><a href="#<%= @page.name %>"><%= @page.name %></a></li>
+<% for article in @articles %>
+  <li><a href="#<%= article.name %>"><%= article.title %></a></li>
+<% end %>
+

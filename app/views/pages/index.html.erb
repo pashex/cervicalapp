@@ -5,181 +5,37 @@
 					<nav id="nav">
 						<div class="navigation-block" >
 							<span class="opener-nav"></span>
-							<ul class="navigation">
-								<li><a href="#Definition">Definition</a></li>
-								<li><a href="#Prevalance">Prevalance</a></li>
-								<li><a href="#Symptoms">Symptoms</a></li>
-								<li><a href="#Risk">Risk factors</a></li>
-								<li><a href="#Reasons">Reasons</a></li>
-								<li><a href="#Diagnostic">Diagnostic</a></li>
-								<li><a href="#Treatment">Treatment</a></li>
-							</ul>
+              <ul class="navigation">
+                <%= render "menu" %>
+              </ul>
 						</div>
 					</nav>
 				</div>
 			</div>
-		<div class="header" id="Definition">
+      <div class="header" id="<%= @page.name %>">
 			<div class="logo-panel">
 				<div class="holder">
-					<h1 class="logo"><a href="#">Cervical <br /> Radiculopathy</a></h1>
-					<p>Cervical radiculopathy is a condition that affects the nerve roots of the cervical or upper portion of the spine. The nerve roots that are usually affected are those of the sixth and the seventh cervical vertebrae.</p>
-				</div>
+				  <%= @page.content.html_safe %>
+        </div>
 			</div>
 		</div>
 		<section id="main">
-			<div class="container-block add" id="Prevalance">
+      <% for article in @articles %>
+      <div class="container-block <%= article.content('background') %>" id="<%= article.name %>">
 				<article class="container-fluid">
 					<div class="content-block row">
 						<div class="col-md-12">
-							<h2>Prevalance</h2>
-							<a href="#" class="alignright"><img src="images/img02.jpg" alt="image description" /></a>
-							<p>Cervical radiculopathy does not happen nearly as often as lumbar radiculopathy, a condition that affects the lumbar or lower portions of the spine.</p>
-							<p>In younger people, cervical radiculopathy usually happens as a result of a herniated disc or because of an injury that causes a pinched nerve. In older patients, the condition is usually the result of changes brought about by aging, such as degenerative changes. Bone spurs often occur as a result of normal wear and tear on the spine and it's supporting structures. Intervertebral discs become dry and shrink as a result of the aging process.</p>
-						</div>
+              <%= article.content.html_safe %>
+            </div>
 					</div>
 				</article>
-			</div>
-			<div class="container-block" id="Symptoms">
-				<article class="container-fluid">
-					<div class="content-block row">
-						<div class="col-md-12">
-							<h2>Symptoms</h2>
-							<p>Cervical radiculopathy usually causes the following symptoms:</p>
-							<ul>
-								<li>Pain that spreads across the upper back and shoulders and extends into the arm, neck and chest</li>
-								<li>Muscle weakness and numbness or a tingling sensation in the fingers or the hands</li>
-								<li>Poor coordination in the hands</li>
-							</ul>
-							<p>Cervical radiculopathy symptoms differ depending on which nerve is affected. For example, if the nerve root that runs above the C6 vertebra is affected, a physician will use the term “C6 radiculopathy”.</p>
-							<p>While any patient's specific symptoms can vary widely, the following are common descriptions for the types and symptoms of cervical radiculopathy:</p>
-							<div class="clear">
-								<img src="images/img04.jpg" alt="image description" class="alignleft bigImage" />
-								<ul>
-									<li>C5 radiculopathy can cause pain and/or weakness in the shoulders and upper arms. Especially may cause discomfort around the shoulder blades. It rarely causes numbness or tingling.</li>
-									<li>C6 radiculopathy (one of the most common), causes pain and/or weakness along the length of the arm, including the biceps (the muscles in front of the upper arms), wrists, and the thumb and index finger.</li>
-									<li>C7 radiculopathy (the most common) causes pain and/or weakness from the neck to the hand and can include the triceps (the muscles on the back of the upper arms) and the middle finger.</li>
-									<li>C8 radiculopathy causes pain from the neck to the hand. Patients may experience weakness in hand grip, and pain and numbness can radiate along the inner side of the arm, ring, and little fingers.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</article>
-			</div>
-			<div class="container-block add2" id="Risk">
-				<article class="container-fluid">
-					<div class="content-block row">
-						<div class="col-md-12">
-							<h2>Risk Factors</h2>
-							<div class="column">
-								<p>There are some known risk factors associated with the development of cervical radiculopathy including:</p>
-								<ul>
-									<li>Smoking</li>
-									<li>Operating vibrating equipment</li>
-									<li>Frequent lifting of more than 25 pounds</li>
-								</ul>
-								<p>Other risk factors that are less frequently associated with the disorder include spinal tumors, giant cell arteritis and spinal infections.</p>
-							</div>
-						</div>
-					</div>
-				</article>
-			</div>
-			<div class="container-block" id="Reasons">
-				<article class="container-fluid">
-					<div class="content-block row">
-						<div class="col-md-12">
-							<h2>Reasons </h2>
-							<p>There are some known risk factors associated with the development of cervical radiculopathy including:</p>
-							<p>How cervical radiculopathy develops isn't fully understood. It starts with the compression of nerves roots which causes inflammation. It is thought that substances are released by bulging or herniated discs that cause the nerve roots to become inflamed and swollen. The pressure on the nerve root may be caused by breakdown in the spinal discs which is a normal part of aging, changes in the vertebrae or other factors.</p>
-							<p>Research has shown that patients with cervical disc disease experienced pain in their extremities when a nerve root was pinched or compressed, but when pressure was exerted on a disc, pain was felt in the neck and along the inner edge of the shoulder blade. Muscle spasms have also been produced by electrically stimulating discs.</p>
-						</div>
-					</div>
-				</article>
-			</div>
-			<div class="container-block add3" id="Diagnostic">
-				<article class="container-fluid">
-					<div class="content-block row">
-						<div class="col-md-12">
-							<div class="column">
-								<h2>Diagnostics</h2>
-								<p>If your doctor suspects you have cervical radiculopathy, several tests can be used to identify what is causing the condition. Tests may include:</p>
-								<ul>
-									<li><b>X-rays:</b> Bone alignment and narrowing of the disc spaces can be identified on x-ray</li>
-									<li><b>MRI:</b> This test uses magnetic resonance imaging to look at the spinal cord, the nerve roots and the soft tissues surrounding the spinal cord.</li>
-									<li><b>CT scan:</b> This uses computerized tomography to examine the minute details of the bones and possible bone spurs.</li>
-									<li><b>EMG:</b> An electromyogram is used to measure the electrical activity of the muscles and can determine if there is nerve damage.</li>
-									<li><b>NCS:</b> This is a nerve conduction study. It tests the ability of the nerves to send electrical impulses.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</article>
-			</div>
-			<div class="container-block" id="Treatment">
-				<article class="container-fluid">
-					<div class="content-block row">
-						<div class="col-md-12">
-							<h2>Treatment</h2>
-							<h3>Conservative Treatment</h3>
-							<p>Conservative medical treatment is usually the first step in treating cervical radiculopathy.</p>
-							<p><b>Medication </b></p>
-							<p>Certain medications can be very effective to treat the pain and inflammation caused by a compressed nerve:</p>
-							<img src="images/img09.jpg" alt="image description" class="alignright" />
-							<ul>
-								<li>Analgesics</li>
-								<li>Non-steroidal anti-inflammatory drugs (NSAIDs) like ibuprofen, aspirin and naproxen</li>
-								<li>Muscle relaxants</li>
-								<li>Oral corticosteroids</li>
-								<li>Narcotic analgesics are sometimes used to treat severe pain</li>
-								<li>Injections of steroids into the affected area</li>
-							</ul>
-
-							<p><b>Physical Therapy</b></p>
-							<p>Exercise can be used to help relieve pain caused by cervical radiculopathy and a skilled therapist may also use modalities such as ultrasound, heat or ice to help reduce pain and muscle spasms. Physical therapists can also work with patients and their physicians to find adaptive equipment and braces such as cervical collars to help provide support and rest for the cervical spine.</p>
-							<p><b>Cervical traction  </b></p>
-							<img src="images/img10.jpg" alt="image description" class="alignright" />
-							<p>In some cases, traction can help to decrease pressure on the nerve root. This doesn’t help in all cases, but it’s simple to do and in cases where it is effective, the patient can use a home traction device to obtain relief.</p>
-							<p><b>Activity modification </b></p>
-							<p>Some activities make pain worse and need to be avoided to keep from irritating the nerve root. Activities to be avoided generally include heavy lifting (over 25 pounds), any activity that causes vibration and compression of the cervical spine, such as boating, running, jogging and snowmobile riding, and any activity that requires prolonged neck extension or rotation.</p>
-							<div class="banner-holder">
-								<a href="#" class="banner"><img src="images/banner.jpg" alt="image description" /></a>
-							</div>
-							<h3>Surgical Treatment</h3>
-							<p>If the pain from cervical radiculopathy persists longer than 6 to 12 weeks, or if it causes severe disability, spinal surgery may be recommended. Surgery for a herniated cervical disc usually carries little risk of complications. It can be completed in a number of different ways:</p>
-							<ul>
-								<li><b>Anterior cervical discectomy and spine fusion: </b>This is the most common surgical procedure for cervical herniated discs. The affected disc is extracted through the front portion of the neck, a bone graft is placed and the space is fused. A plate can be placed in front of the fused portion to add stability and to help ensure fusion.</li>
-								<li><b>Anterior discectomy without spine fusion:</b> In this procedure, the affected disc is removed through the front of the neck, but the space is left open without fusing. The space will often fuse on its own but healing sometimes takes longer and often heals in a deformed position.</li>
-								<li><b>Posterior cervical discectomy:</b> This procedure is more difficult to perform than the anterior approach because the surgeon has to manipulate the spinal cord to get to the affected disc.</li>
-							</ul>
-							<p><b>Post-operative care</b></p>
-							<p>Many surgeons require their patients to wear a neck brace following a cervical discectomy. They will also ask their patients to limit their activity for several weeks post-operatively. Neck pain following surgery is common and analgesics will be prescribed to help manage any surgical discomfort.</p>
-							<p><b>Risks</b></p>
-							<p>Although serious complications from cervical disc surgery are rare, any major surgery carries the risk of complications. Possible complications from surgery for a herniated cervical disc include: </p>
-							<a href="#" class="alignright"><img src="images/img02.jpg" alt="image description" /></a>
-							<ul>
-								<li>Damage to the trachea or to the esophagus.</li>
-								<li>Damage to one of the major blood vessels in the neck.</li>
-								<li>Damage to the nerve to the voice box, resulting in a hoarse voice. This typically resolves in a few months.</li>
-								<li>Failed fusion or displacement of a fusion.</li>
-								<li>Nerve root or spinal cord damage.</li>
-								<li>Infection</li>
-								<li>Cerebrospinal fluid leakage</li>
-							</ul>
-
-						</div>
-					</div>
-				</article>
-			</div>
+      </div>
+      <% end %>
 		</section>
 		<footer id="footer">
 			<nav class="footer-nav">
 				<ul>
-					<li><a href="#Definition">Definition</a></li>
-					<li><a href="#Prevalance">Prevalance</a></li>
-					<li><a href="#Symptoms">Symptoms</a></li>
-					<li><a href="#Risk">Risk factors</a></li>
-					<li><a href="#Reasons">Reasons</a></li>
-					<li><a href="#Diagnostic">Diagnostic</a></li>
-					<li><a href="#Treatment">Treatment</a></li>
+          <%= render "menu" %>
 				</ul>
 			</nav>
 			<div class="footer-panel">
